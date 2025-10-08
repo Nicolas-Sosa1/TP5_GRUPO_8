@@ -1,5 +1,7 @@
 package negocio;
+import entidad.Usuario;
 
-public class UsuarioNeg {
-
+public interface UsuarioNeg {
+	
+	public boolean ValidarUsuario(Usuario usuario);
 }
