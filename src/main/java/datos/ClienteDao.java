@@ -7,4 +7,6 @@ import entidad.Cliente;
 public interface ClienteDao {
 	public ArrayList<Cliente> ObtenerClientes();
 
+	int AgregarCliente(Cliente cliente);
+
 }
