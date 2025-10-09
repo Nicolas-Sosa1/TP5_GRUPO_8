@@ -11,7 +11,7 @@
   
   <style>
   .nav-link.active {
-    background-color: #0d47a1 !important; 
+    background-color: #0d47a1 !important; /* azul más oscuro */
     font-weight: bold;
   }
 </style>
@@ -34,19 +34,19 @@
     </ul>
   </aside>
   
-    <%
+  <%
 		// Obtener mensaje en caso de exito/error
 		String mensaje = "";
 		if (request.getAttribute("mensaje") != null){
 			mensaje = (String)request.getAttribute("mensaje");
 		}
   %>
-  
+
   <!-- CONTENIDO -->
   <main class="flex-grow-1 p-4">
     <h2 class="mb-4">Formulario de Cliente</h2>
     
-        <!-- Label Usuario -->
+    <!-- Label Usuario -->
     <div class="mb-4">
     	<label class="fw-bold" style="color: green;">Usuario: <%= session.getAttribute("nombreUsuario") %></label>
     </div>
