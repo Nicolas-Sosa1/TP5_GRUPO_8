@@ -45,6 +45,84 @@
   <!-- CONTENIDO -->
   <main class="flex-grow-1 p-4">
     <h2 class="mb-4">Formulario de Cliente</h2>
+    
+        <!-- Label Usuario -->
+    <div class="mb-4">
+    	<label class="fw-bold" style="color: green;">Usuario: <%= session.getAttribute("nombreUsuario") %></label>
+    </div>
+
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <form action="ServletCliente" method="post">
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label class="form-label">DNI *</label>
+              <input type="text" class="form-control" placeholder="Ingrese su DNI" name="txtDni" pattern="^\d{6,8}$" title="El DNI debe tener entre 6 y 8 dígitos numéricos" required>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">CUIL *</label>
+              <input type="text" class="form-control" placeholder="Ingrese su CUIL" name="txtCuil" pattern="^\d{11}$" title="El CUIL debe tener 11 dígitos numéricos" required>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Nombre *</label>
+              <input type="text" class="form-control" placeholder="Ingrese su nombre" name="txtNombre" pattern="^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+$" title="Solo se permiten letras" required>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Apellido *</label>
+              <input type="text" class="form-control" placeholder="Ingrese su apellido" name="txtApellido" pattern="^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+$" title="Solo se permiten letras" required>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Sexo *</label>
+              <Select class="form-control" name="ddlSexo" required>
+              		<option value="" selected disabled>-- Seleccione --</option>
+              		<option value="M">M</option>
+              		<option value="F">F</option>
+              		<option value="Otro">Otro</option>
+              </Select>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Nacionalidad *</label>
+              <input type="text" class="form-control" placeholder="Ingrese su nacionalidad" name="txtNacionalidad" pattern="^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+$" title="Solo se permiten letras" required>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Fecha de nacimiento *</label>
+              <input type="date" class="form-control" placeholder="Ingrese su fecha de nacimiento" name="txtFechaNacimiento" max="<%= java.time.LocalDate.now() %>" required>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Dirección *</label>
+              <input type="text" class="form-control" placeholder="Ingrese su dirección" name="txtDireccion" required>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Localidad *</label>
+              <input type="text" class="form-control" placeholder="Ingrese su localidad" name="txtLocalidad" pattern="^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+$" title="Solo se permiten letras" required>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Provincia *</label>
+              <input type="text" class="form-control" placeholder="Ingrese su provincia" name="txtProvincia" pattern="^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+$" title="Solo se permiten letras" required>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Correo electronico *</label>
+              <input type="email" class="form-control" placeholder="Ingrese su correo electrónico" name="txtCorreoElectronico" required>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Telefono *</label>
+              <input type="text" class="form-control" placeholder="Ingrese su telefono" name="txtTelefono" pattern="^\d{10}$" title="El telefono debe tener 10 dígitos numéricos" required>
+            </div>
+            <!-- agregás los demás campos -->
+          </div>
+          <div class="mt-3">
+            <button class="btn btn-primary">Guardar cliente</button>
+          </div>
+          
+          <div class="mb-4">
+          	<label style="color: green;"> <%= mensaje %></label>
+          </div>
+          
+        </form>
+      </div>
+    </div>
+  </main>
+</div>
 
 </body>
 </html>
